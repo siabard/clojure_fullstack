@@ -9,7 +9,7 @@
 (def app
   (ring/ring-handler
    (ring/router
-    ["/api/hello" {:get (fn [_] (response/response "HELLO. I'm API4"))}])
+    ["/api/hello" {:get (fn [_] (response/response "HELLO. I'm API8"))}])
    (ring/create-default-handler)))
 
 ;; 2. 서버 인스탄스 관리
@@ -31,4 +31,5 @@
   (start-server))
 
 
-(start-server)
+;; (start-server)
+
