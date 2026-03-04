@@ -1,16 +1,22 @@
 (ns backend.core
   (:require [ring.adapter.jetty :as jetty]
             [ring.util.response :as response]
+            [ring.middleware.cors :refer [wrap-cors]]
             [reitit.ring :as ring]))
 
 
 ;; 1. API Router설정
 
-(def app
+(def app-routes
   (ring/ring-handler
    (ring/router
     ["/api/hello" {:get (fn [_] (response/response "HELLO. I'm API8"))}])
    (ring/create-default-handler)))
+
+(def app 
+  (wrap-cors app-routes
+             :access-control-allow-origin [#".*"]
+             :access-control-allow-methods [:get :put :post :delete]))
 
 ;; 2. 서버 인스탄스 관리
 (defonce server (atom nil))
@@ -32,4 +38,3 @@
 
 
 ;; (start-server)
-

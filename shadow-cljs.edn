@@ -1,6 +1,8 @@
 {:deps true
- :dev-http {8084 "resources/public"}
+ :dev-http {8084 {:root "resources/public"
+                  }}
  :builds {:app {:target :browser
                 :output-dir "resources/public/js"
                 :asset-path "/js"
+                :closure-defines {frontend.core/api-address #shadow/env ["API_ADDRESS" "http://localhost:3000"]}
                 :modules {:main {:init-fn frontend.core/init!}}}}}
