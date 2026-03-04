@@ -2,7 +2,8 @@
   (:require [ring.adapter.jetty :as jetty]
             [ring.util.response :as response]
             [ring.middleware.cors :refer [wrap-cors]]
-            [reitit.ring :as ring]))
+            [reitit.ring :as ring]
+            [backend.config :as config]))
 
 
 ;; 1. API Router설정
@@ -23,8 +24,9 @@
 
 (defn start-server []
   (when-not @server
-    (println "백엔드 서버 포트 3000 에서 시작")
-    (reset! server (jetty/run-jetty #'app {:port 3000 :join? false}))))
+    (let [port (:port config/config)]
+      (println "백엔드 서버 포트 3000 에서 시작")
+      (reset! server (jetty/run-jetty #'app {:port port :join? false})))))
 
 (defn stop-server []
   (when @server
