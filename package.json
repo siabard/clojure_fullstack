@@ -1,0 +1,16 @@
+{
+  "name": "clojure_fullstack",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "shadow-cljs watch app",
+    "build": "shadow-cljs release app",
+    "test": "shadow-cljs test app"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.18.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
