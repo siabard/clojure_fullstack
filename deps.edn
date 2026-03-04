@@ -1,11 +1,12 @@
 {:paths ["src/main" "src/test" "dev"]
+ :mvn/repos {"clojars" {:url "https://repo.clojars.org/"}
+             "central" {:url "https://repo1.maven.org/maven2/"}}
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/clojurescript {:mvn/version "1.11.60"}
-        thheller/shadow-cljs {:mvn/version "2.18.4"}
-        reagent/reagent {:mvn/version "1.1.1"}
+        thheller/shadow-cljs {:mvn/version "2.28.21"}
+        reagent/reagent {:mvn/version "1.2.0"}
         re-frame/re-frame {:mvn/version "1.2.0"}
         ring/ring-core {:mvn/version "1.9.6"}
         ring/ring-jetty-adapter {:mvn/version "1.9.6"}
         metosin/reitit {:mvn/version "0.5.12"}}
- :aliases {:cljs {:extra-deps {thheller/shadow-cljs {:mvn/version "2.18.4"}}
-                  :main-opts ["-m" "shadow.cljs.devtools.cli"]}}}
+ :aliases {:cljs {:main-opts ["-m" "shadow.cljs.devtools.cli"]}}}
