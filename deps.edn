@@ -12,5 +12,6 @@
         ;; ajax
         cljs-ajax/cljs-ajax {:mvn/version "0.8.4"}
         ring-cors/ring-cors {:mvn/version "0.1.13"}
+        compojure/compojure {:mvn/version "1.7.2"}
         }
  :aliases {:cljs {:main-opts ["-m" "shadow.cljs.devtools.cli"]}}}

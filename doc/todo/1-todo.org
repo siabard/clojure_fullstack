@@ -1,0 +1,10 @@
+
+* Ajax call to backend API
+
+- [ ] Create a new Clojurescript file, e.g., `frontend/ajax.clj`
+- [ ] Import necessary libraries: `reagent.core`, `ajax.core`
+- [ ] Define a function to make the AJAX request to the backend `/api/hello` endpoint
+- [ ] Handle the response and update the UI with the result
+- [ ] Add error handling to manage any potential issues with the AJAX request
+- [ ] Integrate the AJAX call into the main component lifecycle
+- [ ] Test the AJAX call by running the application and verifying that the result is displayed correctly
